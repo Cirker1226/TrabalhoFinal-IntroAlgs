@@ -1,4 +1,4 @@
-# Nome do Jogo
+# Alien Escape
 
 Projeto final da disciplina de Introdução a Algoritmos/Programação, desenvolvido com Python e Pygame.
 
@@ -6,10 +6,9 @@ Este repositório é um template para os grupos da disciplina. A proposta é com
 
 ## Integrantes do grupo
 
-- Nome do integrante 1
-- Nome do integrante 2
-- Nome do integrante 3
-- Nome do integrante 4
+- Matheus Henrique
+- Diego Ribeiro
+- Eduardo Dias
 
 ## Estrutura do projeto
 
@@ -22,43 +21,27 @@ Este repositório é um template para os grupos da disciplina. A proposta é com
 
 ## Descrição do jogo
 
-Descreva brevemente a ideia principal do jogo.
-
-Exemplo:
-
-> O jogo consiste em controlar um personagem que deve coletar moedas e evitar obstáculos. O jogador ganha pontos ao coletar itens e perde vidas ao colidir com obstáculos. A partida termina quando o tempo acaba ou quando o jogador perde todas as vidas.
+> Alien Escape é um jogo do gênero runner infinito em que o jogador controla um militar em uma missão de sobrevivência. Durante o percurso, aliens terrestres e OVNIs aparecem como obstáculos, e o jogador deve reagir rapidamente para sobreviver e acumular pontos.
 
 ## Objetivo do jogador
 
-Explique o que o jogador precisa fazer para vencer ou avançar no jogo.
-
-Exemplo:
-
-> O objetivo é coletar a maior quantidade possível de itens antes que o tempo acabe, evitando colisões com os obstáculos.
+> O objetivo é sobreviver o maior tempo possível, evitando colisões com os aliens que surgem no solo e com os OVNIs que voam pelo céu, alcançando a maior pontuação possível.
 
 ## Regras do jogo
 
-Liste as principais regras do jogo.
-
-Exemplo:
-
-- O jogador se movimenta usando as setas do teclado.
-- Cada item coletado aumenta a pontuação.
-- Colidir com um obstáculo reduz a quantidade de vidas.
-- A partida termina quando o jogador perde todas as vidas ou quando o tempo acaba.
+- O militar corre automaticamente pelo cenário.
+- Aliens aparecem no chão como obstáculos terrestres.
+- OVNIs aparecem no céu como obstáculos aéreos.
+- O jogador deve pular ou agachar para evitar colisões.
+- A pontuação aumenta conforme o tempo de sobrevivência.
+- A velocidade do jogo aumenta gradativamente.
+- A partida termina quando ocorre uma colisão com um alien ou OVNI.
 
 ## Controles
 
-Informe as teclas ou comandos utilizados no jogo.
-
-Exemplo:
-
-- Seta para cima: mover para cima
-- Seta para baixo: mover para baixo
-- Seta para esquerda: mover para esquerda
-- Seta para direita: mover para direita
-- Espaço: realizar ação
-- ESC: sair do jogo
+- **Espaço:** pular.
+- **Seta para baixo (↓):** agachar.
+- **ENTER:** reiniciar a partida.
 
 ## Como executar o projeto
 
