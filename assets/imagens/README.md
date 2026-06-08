@@ -1,10 +1,11 @@
 # Imagens
 
-Pasta destinada a sprites, fundos, icones e outros elementos visuais.
+Pasta destinada a sprites, fundos, ícones e outros elementos visuais do jogo.
 
-## Conteudo atual
+## Conteúdo Atual
 
-- `spritesheet.bmp`: spritesheet base do template.
+- `fundo.png`: Fundo principal do jogo.
+- `personagens/`: Pasta contendo as sprites do personagem.
 
 ## Recomendações
 

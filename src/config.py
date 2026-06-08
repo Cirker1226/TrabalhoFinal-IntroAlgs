@@ -1,13 +1,20 @@
-# Configurações centrais do jogo (tela, cores e caminhos de arquivos).
-LARGURA_TELA = 800
-ALTURA_TELA = 600
-FPS = 60
+# Tela
+LARGURA = 1200
+ALTURA = 600
 
-TITULO_JOGO = "Projeto Final - Pygame"
+# Personagem
+PERSONAGEM_X = 150
+PERSONAGEM_Y = 350
+PERSONAGEM_LARGURA = 128
+PERSONAGEM_ALTURA = 128
 
-BRANCO = (255, 255, 255)
-PRETO = (0, 0, 0)
-CINZA = (212,212,212)
+# Física
+GRAVIDADE = 0.8
+FORCA_PULO = -15
+CHAO = 350
 
-CAMINHO_RECORDE = "data/recorde.txt"
-CAMINHO_SPRITES = "assets/imagens/spritesheet.bmp"
+# Animação
+VELOCIDADE_ANIMACAO = 8
+
+# Fundo
+VELOCIDADE_FUNDO = 3
