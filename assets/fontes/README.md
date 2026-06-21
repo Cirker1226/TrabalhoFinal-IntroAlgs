@@ -1,6 +1,10 @@
 # Fontes
 
-Armazene aqui as fontes utilizadas no jogo (ex.: `.ttf`, `.otf`).
+Esta pasta armazena as fontes tipográficas utilizadas nas telas do jogo.
+
+## Conteúdo atual
+
+- `Eight-Bit Madness.ttf`: fonte principal utilizada em todos os textos do jogo, incluindo pontuação, recordes e mensagens das telas de início, game over e vitória.
 
 ## Recomendações
 

@@ -1,13 +1,12 @@
 # Dados
 
-Esta pasta guarda arquivos de persistencia simples em texto.
+Esta pasta armazena os arquivos gerados pelo jogo durante as partidas, responsáveis por manter informações entre uma sessão e outra.
 
 ## Arquivos
 
-- `recorde.txt`: melhor pontuacao registrada.
-- `ranking.txt`: base para ranking de jogadores (opcional neste template).
-- `README.txt`: arquivo legado; manter por compatibilidade se necessario.
+- `recorde.txt`: registra a maior pontuação obtida pelo jogador. O arquivo é criado automaticamente na primeira partida e atualizado ao final de cada sessão caso o recorde anterior seja superado. Ao remover este arquivo, o recorde é reiniciado.
+- `README.txt`: arquivo legado mantido para preservar a compatibilidade com versões anteriores do projeto.
 
-## Observacao
+## Observação
 
-Evite versionar dados pessoais reais dos jogadores.
+Recomenda-se não versionar esta pasta em repositórios públicos, pois pode conter informações relacionadas aos jogadores.

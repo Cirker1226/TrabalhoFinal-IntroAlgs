@@ -1,6 +1,6 @@
 # Proposta Inicial do Jogo
 
-Este documento deve ser preenchido pelo grupo na Semana 1 do projeto.
+Este documento foi preenchido pelo grupo na Semana 1 do projeto.
 
 ## 1. Nome provisório do jogo
 
@@ -8,27 +8,28 @@ Este documento deve ser preenchido pelo grupo na Semana 1 do projeto.
 
 ## 2. Integrantes do grupo
 
-- Nome 1: Matheus Henrique
-- Nome 2: Diego Ribeiro
-- Nome 3: Eduardo
+- Matheus Henrique Castilho Ricoy Guerra
+- Diego Ribeiro Barreira Gil
+- Eduardo Henrique Rodrigues Dias
+- Lucas Buratto
 
 ## 3. Tipo de jogo
 
 Tipo escolhido pelo grupo:
 
-> Jogo de sobrevivência simples e desvio de obstáculos (runner infinito).
+> Jogo de sobrevivência e desvio de obstáculos (endless runner).
 
 ## 4. Descrição geral do jogo
 
 Descrição:
 
-> O jogador controla um militar que corre automaticamente por um cenário. Durante a partida, aliens aparecem no chão e OVNIs aparecem no céu. O jogador deve pular ou agachar para evitar os obstáculos e sobreviver o maior tempo possível. A dificuldade aumenta gradativamente conforme a partida avança.
+> O jogador controla um militar que corre automaticamente por um cenário de fundo infinito. Durante a partida, aliens aparecem no chão e OVNIs aparecem no céu. O jogador deve pular ou agachar para evitar os obstáculos e sobreviver o maior tempo possível. A dificuldade aumenta gradativamente conforme a pontuação avança. Ao atingir uma pontuação sorteada aleatoriamente, uma nave aparece pelo lado direito da tela e o personagem caminha até ela, encerrando o jogo com uma tela de vitória.
 
 ## 5. Objetivo do jogador
 
 Objetivo:
 
-> Sobreviver o maior tempo possível desviando dos aliens e OVNIs, acumulando a maior pontuação possível.
+> Sobreviver desviando dos aliens e OVNIs, acumulando pontuação até alcançar a meta sorteada e escapar na nave.
 
 ## 6. Regras principais
 
@@ -37,20 +38,22 @@ Regras do grupo:
 - O militar corre automaticamente durante toda a partida.
 - Aliens aparecem no chão e devem ser evitados com pulos.
 - OVNIs aparecem no céu e devem ser evitados ao se agachar.
-- A pontuação aumenta conforme o tempo de sobrevivência.
+- A pontuação aumenta automaticamente com o tempo de sobrevivência.
+- A dificuldade aumenta conforme a pontuação aumenta.
 - A partida termina ao colidir com qualquer obstáculo.
+- Ao atingir a pontuação de vitoria(aleatoria), o jogo entra na cena de vitória.
 
 ## 7. Condição de vitória
 
 Condição de vitória:
 
-> Como o jogo é infinito, não há uma vitória final. O objetivo é alcançar a maior pontuação possível e superar o recorde.
+> O jogador vence ao atingir a pontuação sorteada aleatoriamente entre 500 e 800 pontos. Uma nave aparece pelo lado direito da tela e o personagem caminha automaticamente até ela. Ao chegar, a tela de vitória é exibida com a pontuação final e o recorde.
 
 ## 8. Condição de derrota ou encerramento
 
 Condição de derrota ou encerramento:
 
-> O jogo termina quando o jogador colide com um alien ou um OVNI.
+> O jogo termina quando o jogador colide com um alien ou um OVNI, exibindo a tela de game over com a pontuação atual e o recorde salvo.
 
 ## 9. Elementos previstos no jogo
 
@@ -58,74 +61,83 @@ Condição de derrota ou encerramento:
 
 Descrição:
 
-> Um militar controlado pelo jogador, capaz de pular e agachar para evitar obstáculos.
+> Um militar feito por sprite sheets, capaz de pular e agachar para evitar obstáculos. Possui animações distintas para corrida e agachamento, além de hitbox ajustável para colisão precisa.
 
 ### Obstáculos, inimigos ou desafios
 
 Descrição:
 
-> Aliens terrestres que aparecem no chão e OVNIs que aparecem voando pelo céu.
+> Aliens terrestres de diferentes tamanhos que aparecem no chão, e OVNIs que aparecem voando pelo céu. Cada tipo possui sprites e hitbox própria. A velocidade e o intervalo de spawn aumentam conforme a dificuldade.
 
 ### Itens, alvos ou objetos de interação
 
 Descrição:
 
-> Não haverá itens coletáveis na versão inicial. O foco será a sobrevivência e a pontuação baseada no tempo.
+> Não há itens coletáveis. O foco é a sobrevivência e a pontuação baseada no tempo. A nave que aparece na cena final é o único elemento de interação não obstáculo.
 
 ### Pontuação, vidas, tempo ou progresso
 
 Descrição:
 
-> A pontuação aumenta conforme o tempo de sobrevivência. O jogador possui apenas uma vida e perde ao colidir com um obstáculo.
+> A pontuação aumenta automaticamente com o tempo de sobrevivência. O jogador possui apenas uma vida. O recorde é salvo em arquivo local e exibido tanto durante a partida quanto nas telas de game over e vitória. A dificuldade possui quatro níveis progressivos baseados na pontuação atual.
 
 ## 10. Controles previstos
 
 Controles do grupo:
 
 - Espaço: pular.
-- Seta para baixo (↓): agachar.
-- ENTER: reiniciar a partida.
+- Seta para baixo (↓) e o CTRL esquerdo: agachar.
+- ENTER: iniciar a partida na tela de início.
+- ENTER: reiniciar após game over.
+- ENTER: fechar o jogo na tela de vitória.
 
 ## 11. Organização inicial do código
 
 Organização planejada:
 
-- `main.py`: inicia o jogo.
-- `src/jogo.py`: contém o loop principal.
-- `src/jogador.py`: controla o militar.
-- `src/obstaculos.py`: controla aliens e OVNIs.
-- `src/config.py`: configurações gerais do jogo.
-- `src/dados.py`: armazenamento de recordes.
+- `main.py`: loop principal e máquina de estados do jogo.
+- `src/personagem.py`: controle, animação e física do militar.
+- `src/alien.py`: spawn, movimentação e animação dos obstáculos.
+- `src/pontos.py`: sistema de pontuação, recorde e dificuldade.
+- `src/telas.py`: renderização das telas de início, game over e vitória.
+- `src/cenario.py`: movimentação do fundo infinito.
+- `src/config.py`: constantes e configurações gerais do jogo.
+- `data/`: pasta com arquivos de persistência do recorde.
+- `assets/`: pasta com imagens, fontes e sons do jogo.
 
 ## 12. Recursos externos previstos
 
 Recursos previstos:
 
-- Imagens gratuitas para o militar, aliens e OVNIs.
-- Sons gratuitos para pulo e colisão.
-- Fonte gratuita para exibição da pontuação.
-- Tutoriais sobre Pygame utilizados apenas como referência.
+- Spritesheet do personagem militar com animações de corrida e agachamento.
+- Sprites animados para aliens terrestres e OVNIs.
+- Imagem de fundo do cenário em loop infinito.
+- Fonte tipográfica customizada Eight-Bit Madness para os textos do jogo.
+- Imagens de logo, vitória e nave para as telas especiais.
 
 ## 13. Principais dificuldades esperadas
 
 Dificuldades previstas:
 
-- Implementação da colisão entre jogador e obstáculos.
-- Controle do pulo e da ação de agachar.
-- Aumento progressivo da dificuldade e velocidade do jogo.
+- Implementação da colisão entre o jogador e os obstáculos com hitbox ajustável.
+- Controle da física de pulo com gravidade e força configuráveis.
+- Aumento da dificuldade com ajuste de velocidade e intervalo de spawn.
+- Sincronização da cena da nave com a movimentação do personagem.
 
 ## 14. Escopo mínimo para a entrega final
 
 Escopo mínimo:
 
-> A versão mínima do jogo terá um militar controlado pelo teclado, aliens e OVNIs surgindo como obstáculos, sistema de pontuação baseado no tempo, detecção de colisões e tela de fim de jogo.
+> A versão mínima do jogo possui um militar com animações de corrida e agachamento, aliens e OVNIs surgindo como obstáculos com dificuldade progressiva, sistema de pontuação com recorde persistido, detecção de colisões com hitbox, telas de início, game over e vitória, e cena final com a nave.
 
-## 15. Possíveis melhorias, caso haja tempo
+## 15. Melhorias implementadas
 
-Melhorias possíveis:
+Melhorias realizadas:
 
-- Sistema de ranking e recordes.
-- Efeitos sonoros e músicas.
-- Animações para o personagem e obstáculos.
-- Tela inicial e menu de pausa.
-- Diferentes tipos de aliens e OVNIs.
+- Sistema de recorde salvo em arquivo local.
+- Animações para o personagem e todos os obstáculos via sprite sheet.
+- Tela de início com logo e tela de vitória com imagem customizada.
+- Quatro níveis de dificuldade progressiva.
+- Cena de vitória com nave entrando pela direita e personagem caminhando até ela.
+- Meta de pontuação sorteada aleatoriamente a cada partida.
+- Hitbox ajustável para colisão mais precisa e justa.

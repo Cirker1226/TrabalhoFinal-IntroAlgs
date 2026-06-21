@@ -1,11 +1,15 @@
 # Imagens
 
-Pasta destinada a sprites, fundos, ícones e outros elementos visuais do jogo.
+Esta pasta armazena todos os elementos visuais utilizados no jogo.
 
-## Conteúdo Atual
+## Conteúdo atual
 
-- `fundo.png`: Fundo principal do jogo.
-- `personagens/`: Pasta contendo as sprites do personagem.
+- `fundo.png`: imagem de plano de fundo principal do jogo.
+- `logo.png`: logotipo exibido na tela de início.
+- `vitoria.png`: imagem exibida na tela de vitória.
+- `nave.png`: sprite da nave que aparece na cena de vitória.
+- `personagem/`: sprites de animação do personagem principal, incluindo corrida e agachamento.
+- `aliens/`: sprites dos obstáculos que surgem durante a partida.
 
 ## Recomendações
 

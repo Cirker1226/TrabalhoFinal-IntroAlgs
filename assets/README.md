@@ -1,12 +1,12 @@
 # Assets
 
-Esta pasta centraliza os recursos visuais e sonoros do jogo.
+Esta pasta centraliza todos os recursos utilizados pelo jogo, como imagens, fontes e sons.
 
 ## Organização
 
-- `imagens/`: sprites, fundos e ícones.
-- `sons/`: efeitos sonoros e músicas.
-- `fontes/`: fontes tipográficas customizadas.
+- `imagens/`: contém os sprites dos personagens, planos de fundo, ícones e demais elementos visuais do jogo.
+- `sons/`: contém os efeitos sonoros e músicas utilizados durante as partidas.
+- `fontes/`: contém as fontes tipográficas customizadas aplicadas nas telas do jogo.
 
 ## Boas práticas
 

@@ -1,47 +1,48 @@
 # Alien Escape
 
-Projeto final da disciplina de Introdução a Algoritmos/Programação, desenvolvido com Python e Pygame.
-
-Este repositório é um template para os grupos da disciplina. A proposta é começar com uma base funcional e evoluir o jogo ao longo do semestre.
+Projeto final da disciplina de Introdução a Algoritmos e Programação, desenvolvido com Python e Pygame.
 
 ## Integrantes do grupo
 
-- Matheus Henrique
-- Diego Ribeiro
-- Eduardo Dias
+- Matheus Henrique Castilho Ricoy Guerra
+- Diego Ribeiro Barreira Gil
+- Eduardo Henrique Rodrigues Dias
+- Lucas Buratto
 
 ## Estrutura do projeto
 
-- `main.py`: ponto de entrada da aplicação.
-- `src/`: código-fonte principal do jogo (loop, regras, sprites e dados).
-- `assets/`: imagens, fontes e sons.
-- `data/`: arquivos persistentes (recorde/ranking).
+- `main.py`: ponto de entrada da aplicação, contém o loop principal e a máquina de estados do jogo.
+- `src/`: módulos do jogo, separados por responsabilidade (personagem, aliens, pontuação, cenário, telas e configurações).
+- `assets/`: imagens, fontes e sons utilizados no jogo.
+- `data/`: arquivos persistentes de recorde.
 - `tests/`: testes unitários com `pytest`.
-- `docs/`: documentação do projeto, incluindo proposta inicial.
+- `docs/`: documentação do projeto, incluindo a proposta inicial.
 
 ## Descrição do jogo
 
-> Alien Escape é um jogo do gênero runner infinito em que o jogador controla um militar em uma missão de sobrevivência. Durante o percurso, aliens terrestres e OVNIs aparecem como obstáculos, e o jogador deve reagir rapidamente para sobreviver e acumular pontos.
+> Alien Escape é um endless runner em que o jogador controla um militar em uma missão de sobrevivência. Aliens terrestres e OVNIs aparecem como obstáculos, e o jogador deve reagir rapidamente para sobreviver e acumular pontos. Ao atingir uma meta de pontuação sorteada aleatoriamente, uma nave aparece pelo lado direito da tela e o personagem caminha até ela, encerrando o jogo com uma tela de vitória.
 
 ## Objetivo do jogador
 
-> O objetivo é sobreviver o maior tempo possível, evitando colisões com os aliens que surgem no solo e com os OVNIs que voam pelo céu, alcançando a maior pontuação possível.
+> Sobreviver desviando dos aliens e OVNIs, acumulando pontuação até atingir a meta sorteada e escapar na nave.
 
 ## Regras do jogo
 
 - O militar corre automaticamente pelo cenário.
-- Aliens aparecem no chão como obstáculos terrestres.
-- OVNIs aparecem no céu como obstáculos aéreos.
-- O jogador deve pular ou agachar para evitar colisões.
-- A pontuação aumenta conforme o tempo de sobrevivência.
-- A velocidade do jogo aumenta gradativamente.
-- A partida termina quando ocorre uma colisão com um alien ou OVNI.
+- Aliens aparecem no chão e devem ser evitados com pulos.
+- OVNIs aparecem no céu e devem ser evitados ao se agachar.
+- A pontuação aumenta automaticamente com o tempo de sobrevivência.
+- A dificuldade aumenta progressivamente conforme a pontuação avança, com quatro níveis distintos.
+- A partida termina ao colidir com qualquer obstáculo.
+- Ao atingir a meta de pontuação, o jogo entra na cena de vitória.
 
 ## Controles
 
 - **Espaço:** pular.
-- **Seta para baixo (↓):** agachar.
-- **ENTER:** reiniciar a partida.
+- **Seta para baixo (↓) ou CTRL esquerdo:** agachar.
+- **ENTER:** iniciar a partida na tela de início.
+- **ENTER:** reiniciar após game over.
+- **ENTER:** fechar o jogo na tela de vitória.
 
 ## Como executar o projeto
 
